@@ -22,7 +22,7 @@ ___
 
 ## Setup environment on the Server`🔧`
 ```bash
-# development mode
+# .env file settings 
 1. Create inside server dir file .env
 2. Copy content from .env.dist to .env
 3. Change the data in the .env file to required
