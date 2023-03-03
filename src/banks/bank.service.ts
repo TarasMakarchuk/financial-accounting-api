@@ -6,7 +6,7 @@ import { BankDto } from './dto/bank.dto';
 import { from, Observable } from 'rxjs';
 
 @Injectable()
-export class BanksService {
+export class BankService {
   constructor(
     @InjectRepository(BankEntity)
     private readonly bankRepository: Repository<BankEntity>,

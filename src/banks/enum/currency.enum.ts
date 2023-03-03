@@ -1,5 +1,5 @@
 export enum Currency {
-  USD = 'usd',
-  EUR = 'eur',
-  UAH = 'uah',
+  USD = 'USD',
+  EUR = 'EUR',
+  UAH = 'UAH',
 }

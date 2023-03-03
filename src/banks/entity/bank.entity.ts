@@ -15,8 +15,8 @@ export class BankEntity {
   @Column({ name: 'bank_name' })
   bankName: string;
 
-  @Column()
-  balance: string;
+  @Column({ type: 'numeric', precision: 10, scale: 2, default: 0 })
+  balance: number;
 
   @Column()
   currency: Currency;
