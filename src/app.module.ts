@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from './db/data-source';
-import { BanksModule } from './banks/banks.module';
+import { BankModule } from './banks/bank.module';
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { BanksModule } from './banks/banks.module';
       synchronize: true,
       autoLoadEntities: true,
     }),
-    BanksModule,
+    BankModule,
   ],
   controllers: [],
   providers: [],

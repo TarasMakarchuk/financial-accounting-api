@@ -1,15 +1,15 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { BanksService } from './banks.service';
+import { BankService } from './bank.service';
 import { BankDto } from './dto/bank.dto';
 import { Observable } from 'rxjs';
 import { BankEntity } from './entity/bank.entity';
 
 @Controller('banks')
-export class BanksController {
-  constructor(private banksService: BanksService) {}
+export class BankController {
+  constructor(private bankService: BankService) {}
 
   @Post()
   create(@Body() dto: BankDto): Observable<BankEntity> {
-    return this.banksService.createBank(dto);
+    return this.bankService.createBank(dto);
   }
 }
