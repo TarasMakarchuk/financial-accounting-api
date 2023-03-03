@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from './db/data-source';
 import { BankModule } from './banks/bank.module';
 import { TransactionModule } from './transaction/transaction.module';
+import { CategoryModule } from './category/category.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { TransactionModule } from './transaction/transaction.module';
     }),
     BankModule,
     TransactionModule,
+    CategoryModule,
   ],
   controllers: [],
   providers: [],
