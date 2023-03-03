@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { dataSourceOptions } from './db/data-source';
 import { BankModule } from './banks/bank.module';
+import { TransactionModule } from './transaction/transaction.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { BankModule } from './banks/bank.module';
       autoLoadEntities: true,
     }),
     BankModule,
+    TransactionModule,
   ],
   controllers: [],
   providers: [],

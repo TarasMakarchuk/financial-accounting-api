@@ -1,19 +1,16 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
-import { CurrencyEnum } from '../enum/currency.enum';
+import { TransactionTypeEnum } from '../enum/transaction-type.enum';
 
-@Entity('banks')
-export class BankEntity {
+@Entity('transactions')
+export class TransactionEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ name: 'bank_name' })
-  bankName: string;
-
-  @Column({ type: 'numeric', precision: 10, scale: 2, default: 0 })
-  balance: number;
+  @Column()
+  amount: number;
 
   @Column()
-  currency: CurrencyEnum;
+  type: TransactionTypeEnum;
 
   @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
