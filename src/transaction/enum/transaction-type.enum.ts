@@ -1,4 +1,4 @@
 export enum TransactionTypeEnum {
-  PROFITABLE = 'PROFITABLE ',
+  PROFITABLE = 'PROFITABLE',
   CONSUMABLE = 'CONSUMABLE',
 }

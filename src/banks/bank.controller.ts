@@ -27,8 +27,6 @@ export class BankController {
     @Query('sortedField') sortedField: string,
     @Query('orderBy') orderBy: OrderBy,
   ): Observable<BankEntity[]> {
-    const LIMIT = 10;
-    take = take > LIMIT ? LIMIT : take;
     return this.bankService.findBanks(take, skip, sortedField, orderBy);
   }
 
