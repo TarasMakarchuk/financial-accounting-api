@@ -4,7 +4,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { DeleteResult, Repository } from 'typeorm';
 import { from, map, Observable, switchMap } from 'rxjs';
 import { TransactionDto } from './dto/transaction.dto';
-import { OrderBy } from '../banks/enum/order-by.enum';
+import { SortOrderByEnum } from '../enum/sort-order-by.enum';
 
 @Injectable()
 export class TransactionService {
@@ -21,7 +21,7 @@ export class TransactionService {
     take: number,
     skip: number,
     sortedField: string,
-    orderBy: OrderBy,
+    orderBy: SortOrderByEnum,
   ): Observable<TransactionEntity[]> {
     return from(
       this.transactionRepository
