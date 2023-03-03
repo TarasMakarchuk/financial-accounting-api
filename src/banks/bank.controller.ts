@@ -4,7 +4,7 @@ import { BankDto } from './dto/bank.dto';
 import { Observable } from 'rxjs';
 import { BankEntity } from './entity/bank.entity';
 import { DeleteResult, UpdateResult } from 'typeorm';
-import { OrderBy } from './enum/order-by.enum';
+import { SortOrderByEnum } from '../enum/sort-order-by.enum';
 
 @Controller('banks')
 export class BankController {
@@ -25,7 +25,7 @@ export class BankController {
     @Query('take') take: number,
     @Query('skip') skip: number,
     @Query('sortedField') sortedField: string,
-    @Query('orderBy') orderBy: OrderBy,
+    @Query('orderBy') orderBy: SortOrderByEnum,
   ): Observable<BankEntity[]> {
     return this.bankService.findBanks(take, skip, sortedField, orderBy);
   }

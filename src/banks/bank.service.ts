@@ -4,7 +4,7 @@ import { BankEntity } from './entity/bank.entity';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { BankDto } from './dto/bank.dto';
 import { from, map, Observable, switchMap } from 'rxjs';
-import { OrderBy } from './enum/order-by.enum';
+import { SortOrderByEnum } from '../enum/sort-order-by.enum';
 
 @Injectable()
 export class BankService {
@@ -17,7 +17,7 @@ export class BankService {
     return from(this.bankRepository.save(dto));
   }
 
-  findBanks(take: number, skip: number, sortedField: string, orderBy: OrderBy): Observable<BankEntity[]> {
+  findBanks(take: number, skip: number, sortedField: string, orderBy: SortOrderByEnum): Observable<BankEntity[]> {
     return from(
       this.bankRepository
         .createQueryBuilder('banks')
