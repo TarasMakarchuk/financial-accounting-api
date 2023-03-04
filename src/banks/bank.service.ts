@@ -17,7 +17,12 @@ export class BankService {
     return from(this.bankRepository.save(dto));
   }
 
-  findBanks(take: number, skip: number, sortedField: string, orderBy: SortOrderByEnum): Observable<BankEntity[]> {
+  findBanks(
+    take: number,
+    skip: number,
+    sortedField: string,
+    orderBy: SortOrderByEnum,
+  ): Observable<BankEntity[]> {
     return from(
       this.bankRepository
         .createQueryBuilder('banks')

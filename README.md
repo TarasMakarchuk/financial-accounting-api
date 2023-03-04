@@ -46,6 +46,16 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## Migrations 🚚
+
+```bash
+# generate a new migration
+$ npm run migration:generate src/db/migrations/new_migration_name
+
+# run migrations
+$ npm run migration:run
+```
+
 ## Test 🐛
 
 ```bash
