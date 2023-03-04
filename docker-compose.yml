@@ -1,0 +1,50 @@
+version: '3.9'
+
+services:
+  main:
+    container_name: financial-accounting-api
+    build:
+      context: .
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "5000:5000"
+      - "9129:9129"
+    command: npm run start:dev
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    container_name: docker-host-db
+    image: postgres:15.0-alpine
+    env_file:
+      - .env
+    environment:
+      PG_DATA: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    volumes:
+      - "pgdata:/var/lib/postgresql/data"
+    restart: always
+
+  migration:
+    build:
+      context: .
+    command: [
+      "npm",
+      "run",
+      "migration:run"
+    ]
+    links:
+      - db
+    depends_on:
+      - db
+    env_file:
+      - .env
+
+volumes:
+  pgdata:
