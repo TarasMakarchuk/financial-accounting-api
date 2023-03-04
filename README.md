@@ -68,3 +68,23 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+# Running the app and the database in the Docker 🐋
+
+```
+Change in the .env file variable 
+from 
+POSTGRES_HOST=localhost 
+to 
+POSTGRES_HOST=docker-host-db
+```
+
+```bash
+# build the container
+$ docker-compose build
+
+# start the container
+$ docker-compose up
+
+# stop the container
+$ docker-compose down
+```
