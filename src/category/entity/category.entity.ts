@@ -1,4 +1,12 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  ManyToOne,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
+import { TransactionEntity } from '../../transaction/entity/transaction.entity';
 
 @Entity('categories')
 export class CategoryEntity {
@@ -13,4 +21,7 @@ export class CategoryEntity {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
+
+  @ManyToOne(() => TransactionEntity, (transaction) => transaction.categories)
+  transaction: TransactionEntity;
 }
