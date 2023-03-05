@@ -1,5 +1,13 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { CurrencyEnum } from '../enum/currency.enum';
+import { TransactionEntity } from '../../transaction/entity/transaction.entity';
 
 @Entity('banks')
 export class BankEntity {
@@ -20,4 +28,7 @@ export class BankEntity {
 
   @UpdateDateColumn({ name: 'updated_at' })
   updatedAt: Date;
+
+  @OneToMany(() => TransactionEntity, (transaction) => transaction.bank)
+  transactions: TransactionEntity[];
 }

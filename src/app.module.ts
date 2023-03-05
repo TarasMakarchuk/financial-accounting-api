@@ -11,8 +11,8 @@ import { CategoryModule } from './category/category.module';
     ConfigModule.forRoot({ isGlobal: true }),
     TypeOrmModule.forRoot({
       ...dataSourceOptions,
-      synchronize: false,
-      autoLoadEntities: false,
+      synchronize: true,
+      autoLoadEntities: true,
     }),
     BankModule,
     TransactionModule,

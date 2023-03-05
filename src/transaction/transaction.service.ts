@@ -41,7 +41,7 @@ export class TransactionService {
     ).pipe(
       map((transaction: TransactionEntity) => {
         if (!transaction) {
-          throw new HttpException('Transactions not found', HttpStatus.NOT_FOUND);
+          throw new HttpException('Transaction not found', HttpStatus.NOT_FOUND);
         }
         return transaction;
       }),

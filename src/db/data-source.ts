@@ -16,7 +16,7 @@ export const dataSourceOptions: DataSourceOptions = {
   database: process.env.POSTGRES_DB,
   entities: [BankEntity, TransactionEntity, CategoryEntity],
   migrations: [initBtcTablesLocal1677948941798],
-  migrationsRun: true,
+  migrationsRun: false,
   logging: true,
 };
 
