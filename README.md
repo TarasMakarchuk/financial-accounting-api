@@ -17,7 +17,6 @@
 This application is a financial manager that helps keep track of the owner's finances.
 
 ## Installation ☕
-
 ___
 
 ## Setup environment on the Server`🔧`
